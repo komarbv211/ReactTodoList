@@ -1,0 +1,72 @@
+form.TodoForm {
+    background-color: #f4f7fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  form.TodoForm label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  form.TodoForm input[type="text"],
+  form.TodoForm input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  form.TodoForm input[type="text"]:focus,
+  form.TodoForm input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  form.TodoForm input[type="checkbox"] {
+    margin-left: 10px;
+    transform: scale(1.2);
+  }
+  
+  form.TodoForm p {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  form.TodoForm button[type="submit"],
+  form.TodoForm button[type="reset"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form.TodoForm button[type="reset"] {
+    background-color: #6c757d;
+  }
+  
+  form.TodoForm button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  form.TodoForm button[type="reset"]:hover {
+    background-color: #5a6268;
+  }
+  

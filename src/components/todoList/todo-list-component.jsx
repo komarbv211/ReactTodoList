@@ -24,7 +24,6 @@ export default function TodoList({
       {deadline && <span className="deadline">{deadline}</span>}
       <div className='delete-todo'>
         <button className="delete-btn" onClick={() => onDelete(id)}>X</button>
-        <button className="toggle-btn" onClick={() => onPriorityToggle(id)}>!</button>
       </div>
     </li>
   );

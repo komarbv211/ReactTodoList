@@ -3,14 +3,19 @@ import React, { useState } from 'react';
 import './App.css';
 import { TODOS } from './todo'; 
 import TodoList from './components/todoList/todo-list-component'; 
-
+import TodoForm from './components/todoForm/todo-form-component';
 function App() {
 
   const [todos, setTodos] = useState(TODOS);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterPriority, setFilterPriority] = useState(false);
   const [sortByDeadline, setSortByDeadline] = useState(false);
-
+  const [showForm, setShowForm] = useState(false);
+  
+  const handleAddTodo = (newTodo) => {
+    setTodos([...todos, newTodo]); 
+    setShowForm(false); 
+  };
   const handleDelete = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
   };
@@ -19,13 +24,6 @@ function App() {
     setTodos(
       todos.map(todo =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
-  };
-  const handlePriorityToggle = (id) => {
-    setTodos(
-      todos.map(todo =>
-        todo.id === id ? { ...todo, important: !todo.important } : todo
       )
     );
   };
@@ -88,11 +86,16 @@ function App() {
         {filteredAndSortedTodos.map((i) => (
           <TodoList key={i.id} {...i} onDelete={handleDelete}
           onToggle={handleToggle}
-          onPriorityToggle={handlePriorityToggle}/>
+          />
           
         ))}
       </ul>
-    </div>
+      <button className="add-todo-btn" onClick={() => setShowForm(!showForm)}>
+        {showForm ? 'Hide Form' : 'Add Todo'}
+      </button>
+
+      {showForm && <TodoForm onCreate={handleAddTodo} />} 
+   </div>
   );
 }
 

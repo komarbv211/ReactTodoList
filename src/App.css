@@ -42,3 +42,12 @@
 .controls label{
   margin-right: 20px;
 }
+.add-todo-btn{
+  margin-top: 20px;
+  background-color:rgb(51, 138, 168);
+  color: aliceblue;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+
+}
