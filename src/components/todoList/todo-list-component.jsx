@@ -10,6 +10,7 @@ export default function TodoList({
   completed,
   onDelete,
   onToggle,
+  onPriorityToggle
 }) {
   return (
     <li className={`todo_item ${completed ? "completed" : ""}`}>
@@ -22,7 +23,8 @@ export default function TodoList({
       <span>{title}</span>
       {deadline && <span className="deadline">{deadline}</span>}
       <div className='delete-todo'>
-        <button className="delete-btn" onClick={() => onDelete(id)}>Delete</button>
+        <button className="delete-btn" onClick={() => onDelete(id)}>X</button>
+        <button className="toggle-btn" onClick={() => onPriorityToggle(id)}>!</button>
       </div>
     </li>
   );
